@@ -1,3 +1,10 @@
+VIKTIGT!!!!
+alltid i denna ordning:
+git add <filename>
+git commit -m 'meddelande'
+git pull origin master
+git push origin master
+
 Alla lag har en mapp där lagets ägare nämns, samt dess kedjor, backpar och målvakt är fotograferade, dessa ligger under teams/XXX/...
 
 Spelare går under förkortningar: FB, FE, NW och MA. I 2v2 så är Filip och Filip FF, Niklas och Magnus NM, Backman och Magnus FM och Niklas och Edström NF
