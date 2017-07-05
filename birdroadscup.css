@@ -1,0 +1,14 @@
+img.centering {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p.finalscore {
+    text-align: center;
+    font-size: 60pt;
+}
+div.jQBracket .bubble {
+    display: none;
+}
+
+body { padding-top: 70px; }
