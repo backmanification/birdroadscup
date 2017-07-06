@@ -1,0 +1,12 @@
+solo
+1,NW,TOR
+2,FE,CHI
+3,FB,SJS
+4,MA,BOS
+5,MA,CBJ
+6,FB,STL
+7,FE,PIT
+dubbel
+1,NW,MTL
+2,FB,CGY
+3,MA,MTL
