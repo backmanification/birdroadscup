@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block title %}{{name}}{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+  .important { color: #336699; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+      <img src="/static/teams/{{info.team[0]}}/{{info.team[0]}}logo.png" width="100%" class="centering"></img>
+    </div>
+    <div class="col-xs-4">
+      <p class="centeredtext">
+	<h1>{{info.team[0]}}-{{info.team[1]}}</h1>
+	<h3>{{info.score}}<h3>
+      </p>
+    </div>
+    <div class="col-xs-4">
+      <img src="/static/teams/{{info.team[1]}}/{{info.team[1]}}logo.png" width="100%" class="centering"></img>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-4">
+      <h2>Game Stats</h2>
+    </div>
+    <div class="col-xs-4">
+      <h2>Three Stars</h2>
+    </div>
+    <div class="col-xs-4">
+      <h2>Goals</h2>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-xs-4">
+      <img src="/static/games/{{info.matchid[0]}}/{{info.matchid[1]}}/{{info.game}}/stats.jpg" width="90%" class="centering"></img>
+    </div>
+    <div class="col-xs-4">
+      <img src="/static/games/{{info.matchid[0]}}/{{info.matchid[1]}}/{{info.game}}/3stars.jpg" width="90%" class="centering"></img>
+    </div>
+    <div class="col-xs-4">
+      <img src="/static/games/{{info.matchid[0]}}/{{info.matchid[1]}}/{{info.game}}/events.jpg" width="90%" class="centering"></img>
+    </div>
+  </div>
+</div>
+{% endblock %}
+<!-- Unika koden for teams slutet-->

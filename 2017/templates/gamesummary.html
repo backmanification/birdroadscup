@@ -21,6 +21,11 @@
       <p class="score">{{info[2]}}</p>
     </div>
   </div>
-  <div id="matchCallback"></div>
 </div>
+<script>
+  function openInParent(url) {
+    window.opener.location.href = url;
+    window.close();
+  }
+</script>
 {% endblock %}

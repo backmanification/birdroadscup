@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('child.html')
+
 @app.route('/games/')
 @app.route('/games/<matchseries>/')
 def show_game_summary(matchseries):
@@ -22,9 +23,29 @@ def show_game_summary(matchseries):
             for i in range(3,len(info)):
                 if info[i] == '':
                     break
-                body += '<a href="/birdroadscup/games/{{info[0]}}/game'+str(i-2)+'"><p class="score">{{info['+str(i)+']}}</p></a>'
+                body += '<a href="/birdroadscup/games/{{info[0]}}/game'+str(i-2)+'" onclick="openInParent("/playofftree")><p class="score">{{info['+str(i)+']}}</p></a> '
             return render_template('gamesummary.html', info=info, body = body)
     return render_template('child.html')
+
+@app.route('/games/<matchseries>/<game>')
+def show_game_details(matchseries, game):
+    try:
+        gamenr = game[4]
+        gamenr = int(gamenr)
+    except ValueError:
+        return render_template('child.html')
+    
+    infofile = open('static/games/games.csv').read()
+    infoline = infofile.split('\n')
+    for item in infoline:
+        info = item.split(',')
+        if info[0] == matchseries:
+            matchseries = matchseries.encode('utf-8')
+            matchlist = matchseries.split('-')
+            return render_template('game.html', info={'team': info[1:3], 'score': info[gamenr+2], 'matchid': matchlist, 'game': game})
+
+
+
 """
 @app.route('/games/DF/<matchid>')
 def show_game_DF(matchid):
