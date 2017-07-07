@@ -14,17 +14,27 @@
       <div id="westBracket"></div>
     </div>
     <div class="col-xs-4">
+
       <div class="row">
 	<div class="col-xs-3">
-	  <img src="static/teams/NAS/NASlogo.png" width="100%" class="centering"></img>
-	  <p class="finalscore">2</p>
+	  <img src="static/teams/{{final.teaminfo[0]}}/{{final.teaminfo[0]}}logo.png" width="100%" class="centering"></img>
+	</div>
+	<div class="col-xs-6">
+	</div>
+	<div class="col-xs-3">
+	  <img src="static/teams/{{final.teaminfo[1]}}/{{final.teaminfo[1]}}logo.png" width="100%" class="centering"></img>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-xs-3">
+	  <p class="finalscore">{{final.series[0]}}</p>
 	</div>
 	<div class="col-xs-6">
 	  <img src="static/awards/BirdRoadsCup.jpg" width="100%" class="centering"></img>
 	</div>
 	<div class="col-xs-3">
-	  <img src="static/teams/CBJ/CBJlogo.png" width="100%" class="centering"></img>
-	  <p class="finalscore">4</p>
+	  <p class="finalscore">{{final.series[1]}}</p>
 	</div>
       </div>
     </div>
@@ -32,36 +42,13 @@
       <div id="eastBracket"></div>
     </div>
   </div>
+  <a href="/games/BRC/"><p class="score">Bird Roads Cup Finals</p></a> 
   <div class="row">
-    <div class="col-xs-5"></div>
-    <div class="col-xs-2">
-      <div class="row">
-	<div class="col-xs-3">
-	  <p class="score">2</p>
-	  <p class="score">1</p>
-	  <p class="score">3</p>
-	  <p class="score">4</p>
-	  <p class="score">2</p>
-	  <p class="score">1</p>
-	</div>
-	<div class="col-xs-6">
-	  <a href="/games/BRC/game1"><p class="score">Game 1</p></a>
-	  <a href="/games/BRC/game2"><p class="score">Game 2</p></a>
-	  <a href="/games/BRC/game3"><p class="score">Game 3</p></a>
-	  <a href="/games/BRC/game4"><p class="score">Game 4</p></a>
-	  <a href="/games/BRC/game5"><p class="score">Game 5</p></a>
-	  <a href="/games/BRC/game6"><p class="score">Game 6</p></a>
-	</div>
-	<div class="col-xs-3">
-	  <p class="score">4</p>
-	  <p class="score">4</p>
-	  <p class="score">0</p>
-	  <p class="score">1</p>
-	  <p class="score">3</p>
-	  <p class="score">3</p>
-	</div>
-      </div>
-    <div class="col-xs-5"></div>
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+      {{final.body | safe}}
+    </div>
+    <div class="col-xs-4"></div>
   </div>
 </div>
 {% endblock %}
