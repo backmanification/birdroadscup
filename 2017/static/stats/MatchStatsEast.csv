@@ -1,0 +1,16 @@
+HomeTeam:,AwayTeam:,ScoreHome:,ScoreAway:,Time:,R,G,Match:,path:
+CHI,NAS,1,0,OT2,1,1,game1,static/games/R1/G1
+CHI,NAS,3,2,,1,1,game2,static/games/R1/G1
+CHI,NAS,0,2,,1,1,game3,static/games/R1/G1
+CHI,NAS,0,1,,1,1,game4,static/games/R1/G1
+CHI,NAS,1,0,,1,1,game5,static/games/R1/G1
+MIN,STL,1,0,OT1,1,2,game1,static/games/R1/G2
+MIN,STL,0,3,,1,2,game2,static/games/R1/G2
+MIN,STL,0,2,,1,2,game3,static/games/R1/G2
+MIN,STL,1,2,OT3,1,2,game4,static/games/R1/G2
+ANA,CGY,2,1,,1,3,game1,static/games/R1/G3
+ANA,CGY,3,0,,1,3,game2,static/games/R1/G3
+ANA,CGY,5,4,,1,3,game3,static/games/R1/G3
+EDM,SJS,0,4,,1,4,game1,static/games/R1/G4
+EDM,SJS,2,6,,1,4,game2,static/games/R1/G4
+EDM,SJS,4,7,,1,4,game3,static/games/R1/G4

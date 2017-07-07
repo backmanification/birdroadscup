@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block title %}Playoff Tree{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <h1>Playoff Tree</h1>
+  <div class="row">
+    <div class="col-xs-4">
+      <div id="westBracket"></div>
+    </div>
+    <div class="col-xs-4">
+      <div class="row">
+	<div class="col-xs-3">
+	  <img src="static/teams/NAS/NASlogo.png" width="100%" class="centering"></img>
+	  <p class="finalscore">2</p>
+	</div>
+	<div class="col-xs-6">
+	  <img src="static/awards/BirdRoadsCup.jpg" width="100%" class="centering"></img>
+	</div>
+	<div class="col-xs-3">
+	  <img src="static/teams/CBJ/CBJlogo.png" width="100%" class="centering"></img>
+	  <p class="finalscore">4</p>
+	</div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div id="eastBracket"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-5"></div>
+    <div class="col-xs-2">
+      <div class="row">
+	<div class="col-xs-3">
+	  <p class="score">2</p>
+	  <p class="score">1</p>
+	  <p class="score">3</p>
+	  <p class="score">4</p>
+	  <p class="score">2</p>
+	  <p class="score">1</p>
+	</div>
+	<div class="col-xs-6">
+	  <a href="/birdroadscup/games/BRC/G1/game1"><p class="score">Game 1</p></a>
+	  <a href="/birdroadscup/games/BRC/G1/game2"><p class="score">Game 2</p></a>
+	  <a href="/birdroadscup/games/BRC/G1/game3"><p class="score">Game 3</p></a>
+	  <a href="/birdroadscup/games/BRC/G1/game4"><p class="score">Game 4</p></a>
+	  <a href="/birdroadscup/games/BRC/G1/game5"><p class="score">Game 5</p></a>
+	  <a href="/birdroadscup/games/BRC/G1/game6"><p class="score">Game 6</p></a>
+	</div>
+	<div class="col-xs-3">
+	  <p class="score">4</p>
+	  <p class="score">4</p>
+	  <p class="score">0</p>
+	  <p class="score">1</p>
+	  <p class="score">3</p>
+	  <p class="score">3</p>
+	</div>
+      </div>
+    <div class="col-xs-5"></div>
+  </div>
+  <div id="matchCallback"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Match: {{info[1]}}-{{info[2]}}{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+      <img class="centering" src="/static/teams/{{info[1]}}/{{info[1]}}logo.png" width="100%"></img>
+      <p class="score">{{info[1]}}</p>
+    </div>
+    <div class="col-xs-4">
+      {{body}}
+    </div>
+    <div class="col-xs-4">
+      <img class="centering" src="/static/teams/{{info[2]}}/{{info[2]}}logo.png" width="100%"></img>
+      <p class="score">{{info[2]}}</p>
+    </div>
+  </div>
+  <div id="matchCallback"></div>
+</div>
+{% endblock %}

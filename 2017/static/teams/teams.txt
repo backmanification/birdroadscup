@@ -1,0 +1,16 @@
+CHI,Chicago Blackhawks,FE,Filip Edstrom
+NAS,Nashville Predators,NW,Niklas Wiberg
+MIN,Minnesota Wild,MA,Magnus Ahlm
+STL,St. Louis Blues,FB,Filip Backman
+ANA,Anaheim Ducks,NF,Team Thrush
+CGY,Calgary Flames,FM,Team Chaffinch
+EDM,Edmonton Oilers,FE,Filip Edstrom
+SJS,San Jose Sharks,FB,Filip Backman
+MTL,Montreal Canadiens,NM,Team Rest
+NYR,New York Rangers,FF,Team Filip
+OTT,Ottawa Senators,NW,Niklas Wiberg
+BOS,Boston Bruins,MA,Magnus Ahlm
+WSH,Washington Capitals,FB,Filip Backman
+TOR,Toronto Maple Leafs,NW,Niklas Wiberg
+PIT,Pittsburgh Penguins,FE,Filip Edström
+CBJ,Columbus Blue Jackets,MA,Magnus Ahlm
