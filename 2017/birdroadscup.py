@@ -23,7 +23,7 @@ def show_game_summary(matchseries):
             for i in range(3,len(info)):
                 if info[i] == '':
                     break
-                body += '<a href="/birdroadscup/games/{{info[0]}}/game'+str(i-2)+'" onclick="openInParent("/playofftree")><p class="score">{{info['+str(i)+']}}</p></a> '
+                body += '<a href="/games/'+str(info[0])+'/game'+str(i-2)+'" onclick="openInParent("/playofftree")><p class="score">'+info[i]+'</p></a> '
             return render_template('gamesummary.html', info=info, body = body)
     return render_template('child.html')
 
@@ -44,7 +44,9 @@ def show_game_details(matchseries, game):
             matchlist = matchseries.split('-')
             return render_template('game.html', info={'team': info[1:3], 'score': info[gamenr+2], 'matchid': matchlist, 'game': game})
 
-
+@app.route('/stats/')
+def show_player_stats():
+    return render_template('stats.html')
 
 """
 @app.route('/games/DF/<matchid>')
