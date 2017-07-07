@@ -1,0 +1,11 @@
+1,NW,TOR,Niklas Wiberg,Toronto Maple Leafs
+2,FE,CHI,Filip Edstrom,Chicago Blackhawks
+3,FB,SJS,Filip Backman,San Jose Sharks
+4,MA,BOS,Magnus Ahlm,Boston Bruins
+5,MA,CBJ,Magnus Ahlm,Columbus Blue Jackets
+6,FB,STL,Filip Backman,St. Louis Blues
+7,FE,PIT,Filip Edstrom,Pittsburgh Penguins
+dubbel
+1,NW,MTL,Niklas Wiberg,Montreal Canadiens
+2,FB,CGY,Filip Backman,Calgary Flames
+3,MA,MTL,Magnus Ahlm,Montreal Canadiens

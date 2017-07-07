@@ -1,5 +1,4 @@
 from flask import Flask, render_template, make_response, jsonify, request, abort
-import unicodedata as ucd
 
 app = Flask(__name__)
 
@@ -43,6 +42,7 @@ def show_game_details(matchseries, game):
             matchseries = matchseries.encode('utf-8')
             matchlist = matchseries.split('-')
             return render_template('game.html', info={'team': info[1:3], 'score': info[gamenr+2], 'matchid': matchlist, 'game': game})
+    return render_template('child.html')
 
 @app.route('/stats/')
 def show_player_stats():
@@ -52,62 +52,29 @@ def show_player_stats():
 def show_awards():
     return render_template('awards.html')
 
+@app.route('/draft/')
+def show_draft():
+    infofile = open('static/draft.txt').read()
+    infosolodbl = infofile.split('dubbel\n')
+    solo = {}
+    dbl = {}
+    for item in infosolodbl[0].split('\n'):
+        if item != '':
+            inprog = item.split(',')
+            solo[inprog[0]] = inprog
+    for item in infosolodbl[1].split('\n'):
+        if item != '':
+            inprog = item.split(',')
+            dbl[inprog[0]] = inprog
+    solodrafttext = ''
+    for i in range(1,len(solo)+1):
+        solodrafttext += '<div class="row"><div class="col-xs-4"><p class="finalscore">'+solo[str(i)][0]+'</p></div><div class="col-xs-4"><h2>'+solo[str(i)][3]+'</h2><h3>'+solo[str(i)][4]+'</h3></div><div class="col-xs-4"><img src="/static/teams/'+solo[str(i)][2]+'/'+solo[str(i)][2]+'logo.png" width="100%" ></img></div></div>'
+    dbldrafttext = ''
+    for i in range(1,len(dbl)+1):
+        dbldrafttext += '<div class="row"><div class="col-xs-4"><p class="finalscore">'+dbl[str(i)][0]+'</p></div><div class="col-xs-4"><h2>'+dbl[str(i)][3]+'</h2><h3>'+dbl[str(i)][4]+'</h3></div><div class="col-xs-4"><img src="/static/teams/'+dbl[str(i)][2]+'/'+dbl[str(i)][2]+'logo.png" width="100%" ></img></div></div>'
 
-"""
-@app.route('/games/DF/<matchid>')
-def show_game_DF(matchid):
-    #get team information
-    #matchid = matchid.encode('utf-8')
-    infofile = open('static/games/games.csv').read()
-    infoline = infofile.split('\n')
-    #print infoline
-    body = str()
-    for item in infoline:
-        info = item.split(',')
-        if info[0] == "DF/"+matchid:
-            for i in range(3,len(info)):
-                if info[i] == '':
-                    break
-                body += '<a href="/birdroadscup/games/{{info[0]}}/game'+str(i-2)+'"><p class="score">{{info['+str(i)+']}}</p></a>'
-            return render_template('gamesummary.html', info=info, body = body)
-    return render_template('child.html')
+    return render_template('draft.html', info={'solo': solo, 'dbl': dbl, 'solotext': solodrafttext, 'dbltext': dbldrafttext})
 
-@app.route('/games/CF/<matchid>')
-def show_game_CF(matchid):
-    #get team information
-    #matchid = matchid.encode('utf-8')
-    infofile = open('static/games/games.csv').read()
-    infoline = infofile.split('\n')
-    #print infoline
-    body = str()
-    for item in infoline:
-        info = item.split(',')
-        if info[0] == "CF/"+matchid:
-            for i in range(3,len(info)):
-                if info[i] == '':
-                    break
-                body += '<a href="/birdroadscup/games/{{info[0]}}/game'+str(i-2)+'"><p class="score">{{info['+str(i)+']}}</p></a> '
-            return render_template('gamesummary.html', info=info, body = body)
-    return render_template('child.html')
-
-@app.route('/games/BRC/<matchid>')
-def show_game_BRC(matchid):
-    #get team information
-    #matchid = matchid.encode('utf-8')
-    infofile = open('static/games/games.csv').read()
-    infoline = infofile.split('\n')
-    #print infoline
-    body = str()
-    for item in infoline:
-        info = item.split(',')
-        if info[0] == "BRC/"+matchid:
-            for i in range(3,len(info)):
-                if info[i] == '':
-                    break
-                body += '<a href="/birdroadscup/games/{{info[0]}}/game'+str(i-2)+'"><p class="score">{{info['+str(i)+']}}</p></a>'
-            return render_template('gamesummary.html', info=info, body = body)
-    return render_template('child.html')
-"""
 @app.route('/teams/')
 @app.route('/teams/<teamname>')
 def show_team_profile(teamname):
@@ -125,21 +92,3 @@ def show_team_profile(teamname):
 @app.route('/playofftree')
 def show_playofftree():
     return render_template('playofftree.html')
-
-
-"""
-@app.route('/post/<int:post_id>')
-def show_post(post_id):
-    # show the post with the given id, the id is an integer
-    return 'Post %d' % post_id
-
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('child.html', name=name)
-"""
-
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('child.html', name=name)
