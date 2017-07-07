@@ -48,6 +48,11 @@ def show_game_details(matchseries, game):
 def show_player_stats():
     return render_template('stats.html')
 
+@app.route('/awards/')
+def show_awards():
+    return render_template('awards.html')
+
+
 """
 @app.route('/games/DF/<matchid>')
 def show_game_DF(matchid):
