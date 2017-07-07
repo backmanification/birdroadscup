@@ -14,3 +14,4 @@ WSH,Washington Capitals,FB,Filip Backman
 TOR,Toronto Maple Leafs,NW,Niklas Wiberg
 PIT,Pittsburgh Penguins,FE,Filip Edström
 CBJ,Columbus Blue Jackets,MA,Magnus Ahlm
+TBD,New York Islanders,FB,Filip Backman

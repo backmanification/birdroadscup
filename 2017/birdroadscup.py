@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('child.html')
+    return render_template('startsite.html')
 
 @app.route('/games/')
 @app.route('/games/<matchseries>/')
