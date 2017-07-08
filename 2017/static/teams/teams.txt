@@ -12,6 +12,6 @@ OTT,Ottawa Senators,NW,Niklas Wiberg
 BOS,Boston Bruins,MA,Magnus Ahlm
 WSH,Washington Capitals,FB,Filip Backman
 TOR,Toronto Maple Leafs,NW,Niklas Wiberg
-PIT,Pittsburgh Penguins,FE,Filip Edström
+PIT,Pittsburgh Penguins,FE,Filip Edstrom
 CBJ,Columbus Blue Jackets,MA,Magnus Ahlm
 TBD,New York Islanders,FB,Filip Backman

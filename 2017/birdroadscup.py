@@ -46,7 +46,9 @@ def show_game_details(matchseries, game):
 
 @app.route('/stats/')
 def show_player_stats():
-    return render_template('stats.html')
+    playertable = playerstats_to_html(stats_reader('static/stats/playerstats.csv'))
+    goalietable = playerstats_to_html(stats_reader('static/stats/goaliestats.csv'),'2')
+    return render_template('stats.html', playertable=playertable, goalietable=goalietable)
 
 @app.route('/awards/')
 def show_awards():
@@ -111,3 +113,36 @@ def show_playofftree():
                 body += '<div class="row"><div class="col-xs-2"></div><div class="col-xs-2"><p class="score">'+gameinfo[0]+'</p></div><div class="col-xs-4"><a href="/games/BRC/game'+str(i-2)+'"><p class="score">Game '+str(i-2)+'</p></a></div><div class="col-xs-2"><p class="score">'+gameinfo[1]+'</p></div><div class="col-xs-2"></div></div>'
             
             return render_template('playofftree.html', final={'teaminfo': info[1:3], 'gameinfo': gameinfo, 'body': body, 'series': [home, away]})
+
+
+
+def stats_reader(pathtostatsfile):
+    infofile = open(pathtostatsfile).read()
+    infoline = infofile.split('\n')
+    stats =[]
+    for item in infoline:
+        if item != '':
+            stats.append( item.split(',') )
+    return stats
+
+def playerstats_to_html(stats, idchanger=''):
+    #creating the table
+    html_string='<table id="example'+idchanger+'" class="table table-striped table-bordered" width="100%" cellspacing="0">'
+    #creating the head
+    html_string+='<thead><tr>'
+    for item in stats[0]:
+        html_string+='<th>'+item+'</th>'
+    html_string+='</tr></thead>'
+    #starting the body
+    html_string += '<tbody>'
+    #looping over all players adding a row
+    for line in stats:
+        if line == stats[0]:
+            continue
+        html_string+='<tr>'
+        for item in line:
+            html_string+='<td>'+item+'</td>'
+        html_string+='</tr>'
+    #closing the body and table
+    html_string +='</tbody></table>'
+    return html_string
