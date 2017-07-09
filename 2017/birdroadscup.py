@@ -1,4 +1,6 @@
 from flask import Flask, render_template, make_response, jsonify, request, abort
+import os
+import pdb
 
 app = Flask(__name__)
 
@@ -19,11 +21,16 @@ def show_game_summary(matchseries):
     for item in infoline:
         info = item.split(',')
         if info[0] == matchseries:
+            folder = info[0].split('-')
+            internet = ''
+            for ink in folder:
+                internet += ink+'/'
+            table=playerstats_to_html(stats_reader('static/games/'+str(internet)+'playerstats.csv'))
             for i in range(3,len(info)):
                 if info[i] == '':
                     break
                 body += '<a href="/games/'+str(info[0])+'/game'+str(i-2)+'" onclick="openInParent("/playofftree")><p class="score">'+info[i]+'</p></a> '
-            return render_template('gamesummary.html', info=info, body = body)
+            return render_template('gamesummary.html', info=info, body = body, table=table)
     return render_template('child.html')
 
 @app.route('/games/<matchseries>/<game>')
@@ -146,3 +153,23 @@ def playerstats_to_html(stats, idchanger=''):
     #closing the body and table
     html_string +='</tbody></table>'
     return html_string
+
+def add_stats():
+    stats =[]
+    for x in os.walk('static/games'):
+        if len(x[0]) > 16:
+            continue
+        for i in x[1]:
+            if len(i) < 4:
+                try:
+                    pdb.set_trace()
+                    stats.append(stats_reader(x[0]+'/'+i+'/stats.csv'))
+                except IOError:
+                    True
+    for seriesstats in stats:
+        if seriesstats == stats[0]:
+            continue
+        
+    #har borjar additionsdelen
+
+    #sok igenom alla mappar i matchseries efter en fil som heter stats.csv, hoppa over forsta raden (headern), kolla om nagra namn matchar, isf adera ihop resterande kolumner, gor en gang i borjan, sen later man sidan rulla
