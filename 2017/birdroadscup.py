@@ -51,7 +51,13 @@ def show_game_details(matchseries, game):
         if info[0] == matchseries:
             matchseries = matchseries.encode('utf-8')
             matchlist = matchseries.split('-')
-            return render_template('game.html', info={'team': info[1:3], 'score': info[gamenr+2], 'matchid': matchlist, 'game': game})
+            events2 = ''
+            try:
+                open('static/games/'+matchlist[0]+'/'+matchlist[1]+'/'+game+'/events2.jpg')
+                events2 = '<img src="/static/games/'+matchlist[0]+'/'+matchlist[1]+'/'+game+'/events2.jpg" width="700pt" class="centering"></img>'
+            except IOError:
+                True
+            return render_template('game.html', info={'team': info[1:3], 'score': info[gamenr+2], 'matchid': matchlist, 'game': game}, events2 = events2)
     return render_template('child.html')
 
 @app.route('/stats/')
