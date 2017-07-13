@@ -11,9 +11,9 @@ var bracketEast = {
   ],
   results: [
       [
-          [[2, 4,'R1-G5'], [4, 2, 'R1-G6'], [4, 2, 'R1-G7'], [1, 4, 'R1-G8']],
-          [[2, 4,'DF-G3'], [3, 4, 'DF-G4']],
-          [[3, 4,'CF-G2']]
+          [[3, 0,'R1-G5'], [null, null, 'R1-G6'], [null, null, 'R1-G7'], [null, null, 'R1-G8']],
+          [[null, null,'DF-G3'], [null, null, 'DF-G4']],
+          [[null, null,'CF-G2']]
       ]
   ]
 }
@@ -32,9 +32,9 @@ var bracketWest = {
   ],
   results: [
       [
-          [[0, 4,'R1-G1'], [1, 4, 'R1-G2'], [4, 0, 'R1-G3'], [4, 2, 'R1-G4']],
-          [[4, 2,'DF-G1'], [4, 3, 'DF-G2']],
-          [[4, 2,'CF-G1']]
+          [[null, null,'R1-G1'], [null, null, 'R1-G2'], [3, 0, 'R1-G3'], [null, null, 'R1-G4']],
+          [[null, null,'DF-G1'], [null, null, 'DF-G2']],
+          [[null, null,'CF-G1']]
       ]
   ]
 }

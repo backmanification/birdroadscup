@@ -25,7 +25,10 @@ def show_game_summary(matchseries):
             internet = ''
             for ink in folder:
                 internet += ink+'/'
-            table=playerstats_to_html(stats_reader('static/games/'+str(internet)+'playerstats.csv'))
+            try:
+                table=playerstats_to_html(stats_reader('static/games/'+str(internet)+'playerstats.csv'))
+            except IOError:
+                table='TBD'
             for i in range(3,len(info)):
                 if info[i] == '':
                     break
@@ -109,6 +112,7 @@ def show_playofftree():
             body = ''
             home=0
             away=0
+            gameinfo = ''
             for i in range(3,len(info)):
                 if info[i] == '':
                     break

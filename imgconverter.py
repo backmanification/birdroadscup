@@ -22,11 +22,12 @@ def img_convert(pathtofile, outputpath):
     text = text.replace('8.','S.')
     text = text.replace('.8','.S')
     text = text.replace('PLAVER','PLAYER')
+    text = text.encode('utf-8')
     for i in range(10):
         text = text.replace(str(i)+'O',str(i)+'0')
         text = text.replace(str(i)+'D',str(i)+'0')
     csvtext = text.replace(' ',',')
-
+    
     try:
         text_file = open(outputpath,'r')
         text_file_text = text_file.read()
@@ -36,16 +37,17 @@ def img_convert(pathtofile, outputpath):
         text_file.write(csvtext)
         text_file.close()
         return True
-    
+
     temp_file = open ('temp.csv','w')
     temp_file.write(csvtext)
     temp_file.close()
     text_file = open(outputpath,'w')
+
     for text_file_row in text_file_text.split('\n'):
         matched = False
         if len(text_file_row)<2:
             continue
-        for row in temp.split('\n'):
+        for row in csvtext.split('\n'):
             if len(row)<2:
                 continue
             if text_file_row == row:
@@ -92,8 +94,8 @@ while True:
     if riddle == 'y':
         success = True
         statstype = 'player'
-        filepath = 'leksaker/stats2.jpg'
-        outputpath = '2017/static/games/R1/G1'
+        filepath = 'leksaker/MTL-NYR/stats3.jpg'
+        outputpath = '2017/static/games/R1/G5'
         break
     success, statstype, filepath, outputpath = menu()
     if not success:
