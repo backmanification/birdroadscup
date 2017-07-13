@@ -72,8 +72,11 @@ def tot_stats(statstype):
             else:
                 text += n[i]+'\n'
         #print text
+    print 'xxxx'
+    #text.encode('utf-8')
+    print 'cccc'
     tot_stats_file = open('static/stats/'+statstype+'stats.csv','w')
     tot_stats_file.write(text)
     tot_stats_file.close()
 
-tot_stats('player')
+tot_stats('goalie')

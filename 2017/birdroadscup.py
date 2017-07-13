@@ -57,8 +57,8 @@ def show_game_details(matchseries, game):
 @app.route('/stats/')
 def show_player_stats():
     playertable = playerstats_to_html(stats_reader('static/stats/playerstats.csv'))
-    goalietable = playerstats_to_html(stats_reader('static/stats/goaliestats.csv'),'2')
-    return render_template('stats.html', playertable=playertable, goalietable=goalietable)
+    #goalietable = playerstats_to_html(stats_reader('static/stats/goaliestats.csv'),'2')
+    return render_template('stats.html', playertable=playertable)#, goalietable=goalietable)
 
 @app.route('/awards/')
 def show_awards():
