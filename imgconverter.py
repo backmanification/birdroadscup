@@ -21,6 +21,8 @@ def img_convert(pathtofile, outputpath):
     text = text.replace(', ','.')
     text = text.replace('8.','S.')
     text = text.replace('.8','.S')
+    text = text.replace(' D ',' 0 ')
+    text = text.replace(' O ',' 0 ')
     text = text.replace('PLAVER','PLAYER')
     text = text.encode('utf-8')
     for i in range(10):

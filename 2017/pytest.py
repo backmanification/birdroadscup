@@ -1,19 +1,4 @@
-import os
-import pdb
-
-a = os.walk('/static/games/')
-
-from birdroadscup import stats_reader, playerstats_to_html, add_stats
-add_stats()
+from birdroadscup import stats_reader, playerstats_to_html
 
 
-
-for i in range(3):
-    print i
-    try:
-        a = stats_reader('static/teams/teams.csv')
-    except IOError:
-        continue
-
-
-    #print playerstats_to_html(a)
+print playerstats_to_html(stats_reader('static/stats/goaliestats.csv'),'2')

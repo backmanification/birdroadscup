@@ -27,13 +27,15 @@ def show_game_summary(matchseries):
                 internet += ink+'/'
             try:
                 table=playerstats_to_html(stats_reader('static/games/'+str(internet)+'playerstats.csv'))
+                goalietable = playerstats_to_html(stats_reader('static/games/'+str(internet)+'goaliestats.csv'),'2')
             except IOError:
                 table='TBD'
+                goalietable = 'TBD'
             for i in range(3,len(info)):
                 if info[i] == '':
                     break
                 body += '<a href="/games/'+str(info[0])+'/game'+str(i-2)+'" onclick="openInParent("/playofftree")><p class="score">'+info[i]+'</p></a> '
-            return render_template('gamesummary.html', info=info, body = body, table=table)
+            return render_template('gamesummary.html', info=info, body = body, table=table, goalietable=goalietable)
     return render_template('child.html')
 
 @app.route('/games/<matchseries>/<game>')
@@ -63,8 +65,8 @@ def show_game_details(matchseries, game):
 @app.route('/stats/')
 def show_player_stats():
     playertable = playerstats_to_html(stats_reader('static/stats/playerstats.csv'))
-    #goalietable = playerstats_to_html(stats_reader('static/stats/goaliestats.csv'),'2')
-    return render_template('stats.html', playertable=playertable)#, goalietable=goalietable)
+    goalietable = playerstats_to_html(stats_reader('static/stats/goaliestats.csv'),'2')
+    return render_template('stats.html', playertable=playertable, goalietable=goalietable)
 
 @app.route('/awards/')
 def show_awards():
@@ -148,6 +150,8 @@ def playerstats_to_html(stats, idchanger=''):
     #creating the head
     html_string+='<thead><tr>'
     for item in stats[0]:
+        if item == stats[0][0]:
+            item = 'POS'
         html_string+='<th>'+item+'</th>'
     html_string+='</tr></thead>'
     #starting the body
@@ -163,23 +167,9 @@ def playerstats_to_html(stats, idchanger=''):
     #closing the body and table
     html_string +='</tbody></table>'
     return html_string
-
-def add_stats():
-    stats =[]
-    for x in os.walk('static/games'):
-        if len(x[0]) > 16:
-            continue
-        for i in x[1]:
-            if len(i) < 4:
-                try:
-                    pdb.set_trace()
-                    stats.append(stats_reader(x[0]+'/'+i+'/stats.csv'))
-                except IOError:
-                    True
-    for seriesstats in stats:
-        if seriesstats == stats[0]:
-            continue
         
     #har borjar additionsdelen
 
     #sok igenom alla mappar i matchseries efter en fil som heter stats.csv, hoppa over forsta raden (headern), kolla om nagra namn matchar, isf adera ihop resterande kolumner, gor en gang i borjan, sen later man sidan rulla
+
+#"table table-striped table-bordered"
