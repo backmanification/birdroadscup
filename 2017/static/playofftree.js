@@ -11,8 +11,8 @@ var bracketEast = {
   ],
   results: [
       [
-          [[3, 0,'R1-G5'], [3, 2, 'R1-G6'], [null, null, 'R1-G7'], [null, null, 'R1-G8']],
-          [[null, null,'DF-G3'], [null, null, 'DF-G4']],
+          [[3, 0,'R1-G5'], [3, 2, 'R1-G6'], [3, 1, 'R1-G7'], [3, 1, 'R1-G8']],
+          [[2, 3,'DF-G3'], [3, 1, 'DF-G4']],
           [[null, null,'CF-G2']]
       ]
   ]
