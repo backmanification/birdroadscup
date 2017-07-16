@@ -27,9 +27,11 @@ def show_game_summary(matchseries):
                 internet += ink+'/'
             try:
                 table=playerstats_to_html(stats_reader('static/games/'+str(internet)+'playerstats.csv'))
-                goalietable = playerstats_to_html(stats_reader('static/games/'+str(internet)+'goaliestats.csv'),'2')
             except IOError:
                 table='TBD'
+            try:
+                goalietable = playerstats_to_html(stats_reader('static/games/'+str(internet)+'goaliestats.csv'),'2')
+            except IOError:
                 goalietable = 'TBD'
             for i in range(3,len(info)):
                 if info[i] == '':
@@ -118,17 +120,21 @@ def show_playofftree():
         if info[0] == 'BRC':
             count = 0
             body = ''
-            home=0
-            away=0
+            home=4
+            away=3
             gameinfo = ''
             for i in range(3,len(info)):
                 if info[i] == '':
                     break
                 gameinfo = info[i].split('-')
-                if gameinfo[0]>gameinfo[1]:
-                    home +=1
-                else:
-                    away +=1
+                """try:
+                    if gameinfo[0]>gameinfo[1]:
+                        home +=1
+                    else:
+                        away +=1
+                except IndexError:
+                    home = 4
+                    away = 3"""
                 body += '<div class="row"><div class="col-xs-2"></div><div class="col-xs-2"><p class="score">'+gameinfo[0]+'</p></div><div class="col-xs-4"><a href="/games/BRC/game'+str(i-2)+'"><p class="score">Game '+str(i-2)+'</p></a></div><div class="col-xs-2"><p class="score">'+gameinfo[1]+'</p></div><div class="col-xs-2"></div></div>'
             
             return render_template('playofftree.html', final={'teaminfo': info[1:3], 'gameinfo': gameinfo, 'body': body, 'series': [home, away]})

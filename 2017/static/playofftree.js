@@ -13,7 +13,7 @@ var bracketEast = {
       [
           [[3, 0,'R1-G5'], [3, 2, 'R1-G6'], [3, 1, 'R1-G7'], [3, 1, 'R1-G8']],
           [[2, 3,'DF-G3'], [3, 1, 'DF-G4']],
-          [[null, null,'CF-G2']]
+          [[0, 3,'CF-G2']]
       ]
   ]
 }
@@ -33,8 +33,8 @@ var bracketWest = {
   results: [
       [
           [[3, 1,'R1-G1'], [1, 3, 'R1-G2'], [3, 0, 'R1-G3'], [3, 2, 'R1-G4']],
-          [[null, null,'DF-G1'], [null, null, 'DF-G2']],
-          [[null, null,'CF-G1']]
+          [[1, 3,'DF-G1'], [3, 1, 'DF-G2']],
+          [[3, 1,'CF-G1']]
       ]
   ]
 }

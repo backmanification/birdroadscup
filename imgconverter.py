@@ -96,8 +96,8 @@ while True:
     if riddle == 'y':
         success = True
         statstype = 'player'
-        filepath = 'leksaker/OTT-BOS/stats3.jpg'
-        outputpath = '2017/static/games/R1/G6'
+        filepath = 'leksaker/WSH-OTT/stats1.jpg'
+        outputpath = '2017/static/games/CF/G2'
         break
     success, statstype, filepath, outputpath = menu()
     if not success:
