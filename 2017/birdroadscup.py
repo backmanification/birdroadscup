@@ -47,24 +47,24 @@ def show_profiles(name):
                       'CBJ': {'name':'CBJ', 'games': ['R1-G8'], 'results': ['-PIT 1-3(L)']},
                       'MIN': {'name':'MIN', 'games': ['R1-G2'], 'results': ['-STL 1-3(L)']},
                       'MTL': {'name':'MTL', 'games': ['DF-G3'], 'results': ['-OTT 2-3(L)']} },
-            'dble': { 'MTL': {'name':'MTL', 'games': ['R1-G5'], 'results': ['-NYR 3-0(W)'], 'other_member': 'Niklas_Wiberg'},
-                      'CGY': {'name':'CGY', 'games': ['R1-G3'], 'results': ['-ANA 0-3(L)'], 'other_member': 'Filip_Backman'} },
+            'dble': { 'MTL': {'name':'MTL', 'games': ['R1-G5'], 'results': ['-NYR 3-0(W)'], 'other_member': 'Niklas_Wiberg','teamname': 'Team Rest'},
+                      'CGY': {'name':'CGY', 'games': ['R1-G3'], 'results': ['-ANA 0-3(L)'], 'other_member': 'Filip_Backman','teamname': 'Team Chaffinch'} },
             'awards': {'2017': {'prizes': [''], 'as':['']}}}
     
     Backman = {'name': 'Filip Backman',
                'solo': { 'SJS': {'name':'SJS', 'games': ['R1-G4'], 'results': ['-EDM 2-3(L)']},
                          'STL': {'name':'STL', 'games': ['R1-G2','DF-G1','CF-G1'], 'results': ['-MIN 3-1(W)','-CHI 3-1(W)','-ANA 3-1(W)']},
                          'WSH': {'name':'WSH', 'games': ['R1-G7','DF-G4','CF-G2'], 'results': ['-TOR 3-1(W)','-PIT 3-1(W)','-OTT 3-0(W)']} },
-               'dble': { 'CGY': {'name':'CGY', 'games': ['R1-G3'], 'results': ['-ANA 0-3(L)'], 'other_member': 'Magnus_Ahlm'},
-                         'NYR': {'name':'NYR', 'games': ['R1-G5'], 'results': ['-MTL 0-3(L)'], 'other_member': 'Filip_Edstrom'} },
+               'dble': { 'CGY': {'name':'CGY', 'games': ['R1-G3'], 'results': ['-ANA 0-3(L)'], 'other_member': 'Magnus_Ahlm','teamname': 'Team Chaffinch'},
+                         'NYR': {'name':'NYR', 'games': ['R1-G5'], 'results': ['-MTL 0-3(L)'], 'other_member': 'Filip_Edstrom','teamname': 'Team Filip'} },
                'awards': {'2017': {'prizes': ['Bird Roads Cup','Conn Smirk Trophy','Steve Icerman Trophy','Dominik Hasek Award'], 'as':['Filip Backman','Vladimir Tarasenko', 'Karl Alzner', 'Braden Holtby']}}}
     
     Edstrom = {'name': 'Filip Edstrom',
                'solo': { 'CHI': {'name':'CHI', 'games': ['R1-G1','DF-G1'], 'results': ['-NAS 3-1(W)','-STL 1-3(L)']},
                          'EDM': {'name':'EDM', 'games': ['R1-G4','DF-G2'], 'results': ['-SJS 3-2(W)','-ANA 1-3(L)']},
                          'PIT': {'name':'PIT', 'games': ['R1-G8','DF-G4'], 'results': ['-CBJ 3-1(W)','-WSH 1-3(L)']} },
-               'dble': { 'ANA': {'name':'ANA', 'games': ['R1-G3','CF-G1'], 'results': ['-CGY 3-0(W)','-STL 1-3(L)'], 'other_member': 'Niklas_Wiberg'},
-                         'NYR': {'name':'NYR', 'games': ['R1-G5'], 'results': ['-MTL 0-3(L)'], 'other_member': 'Filip_Backman'} },
+               'dble': { 'ANA': {'name':'ANA', 'games': ['R1-G3','CF-G1'], 'results': ['-CGY 3-0(W)','-STL 1-3(L)'], 'other_member': 'Niklas_Wiberg','teamname': 'Team Thrush'},
+                         'NYR': {'name':'NYR', 'games': ['R1-G5'], 'results': ['-MTL 0-3(L)'], 'other_member': 'Filip_Backman','teamname': 'Team Filip'} },
                'awards': {'2017': {'prizes': [''], 'as':['']}}}
     
     Wiberg = {'name': 'Niklas Wiberg',
@@ -72,8 +72,8 @@ def show_profiles(name):
                         'OTT': {'name':'OTT', 'games': ['R1-G6','DF-G3','CF-G2'], 'results': ['-BOS 3-2(W)','-MTL 3-2(W)','-WSH 0-3(L)']},
                         'TOR': {'name':'TOR', 'games': ['R1-G7'], 'results': ['-WSH 1-3(L)']},
                         'ANA': {'name':'ANA', 'games': ['DF-G2'], 'results': ['-EDM 3-1(W)']} },
-              'dble': { 'ANA': {'name':'ANA', 'games': ['R1-G3','CF-G1'], 'results': ['-CGY 3-0(W)','-STL 1-3(L)'], 'other_member': 'Filip_Edstrom'},
-                        'MTL': {'name':'MTL', 'games': ['R1-G5'], 'results': ['-NYR 3-0(W)'], 'other_member': 'Magnus_Ahlm'} },
+              'dble': { 'ANA': {'name':'ANA', 'games': ['R1-G3','CF-G1'], 'results': ['-CGY 3-0(W)','-STL 1-3(L)'], 'other_member': 'Filip_Edstrom','teamname': 'Team Thrush'},
+                        'MTL': {'name':'MTL', 'games': ['R1-G5'], 'results': ['-NYR 3-0(W)'], 'other_member': 'Magnus_Ahlm','teamname': 'Team Rest'} },
               'awards': {'2017': {'prizes': [''], 'as':['']}}}
 
     players = [Ahlm, Backman, Edstrom, Wiberg]
@@ -97,7 +97,7 @@ def show_profiles(name):
             dbl_body +='<div class="row"><div class="col-xs-6"><h3>Double Teams</h3></div><div class="col-xs-6"><h3>Double Matches</h3></div></div>'
             for team in player['dble'].keys():
                 dbl_team_info = '<div class="row">'
-                dbl_team_info += '<div class="col-xs-6"><p class="teams"><img src="/static/teams/'+player['dble'][team]['name']+'/'+player['dble'][team]['name']+'logo.png" height="25pt" ><a href="/teams/'+player['dble'][team]['name']+'/">'+player['dble'][team]['name']+'</a> together with <a href="/profiles/'+player['dble'][team]['other_member']+'">'+player['dble'][team]['other_member'].replace('_',' ')+'</a></p></div>'
+                dbl_team_info += '<div class="col-xs-6"><p class="teams"><img src="/static/teams/'+player['dble'][team]['name']+'/'+player['dble'][team]['name']+'logo.png" height="25pt" ><a href="/teams/'+player['dble'][team]['name']+'/">'+player['dble'][team]['name']+'</a> together with <a href="/profiles/'+player['dble'][team]['other_member']+'">'+player['dble'][team]['other_member'].replace('_',' ')+'</a> as '+player['dble'][team]['teamname']+'</p></div>'
                 dbl_team_info += '<div class="col-xs-6"><p class="teams">'
                 for gameno in range(len(player['dble'][team]['games'])):
                     dbl_team_info += '<a href="/games/'+player['dble'][team]['games'][gameno]+'/">'+player['dble'][team]['name']+player['dble'][team]['results'][gameno]+'</a>   '
