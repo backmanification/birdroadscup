@@ -154,6 +154,10 @@ def show_game_details(matchseries, game):
             return render_template('game.html', info={'team': info[1:3], 'score': info[gamenr+2], 'matchid': matchlist, 'game': game}, events2 = events2)
     return render_template('child.html')
 
+@app.route('/calendar/')
+def show_calendar():
+    return render_template('calendar.html')
+
 @app.route('/stats/')
 def show_player_stats():
     playertable = playerstats_to_html(stats_reader('static/stats/playerstats.csv'))

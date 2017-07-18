@@ -21,6 +21,8 @@ p.centeredtext {
 
 body { padding-top: 70px; }
 
+p.footerspace { margin-top: 30px; }
+
 
 .navbar {
     margin-bottom: 20px;
