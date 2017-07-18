@@ -23,9 +23,13 @@ body { padding-top: 70px; }
 
 
 .navbar {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 div.dataTables_wrapper {
-        margin-bottom: 3em;
+    margin-bottom: 3em;
+}
+
+.teams {
+    font-size: 15pt;    
 }

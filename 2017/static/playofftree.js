@@ -61,7 +61,7 @@ function defaultRender(container: JQuery, team: string, score: any, state: Entry
 
 function onclick(data) {
     //$('#matchCallback').text( data )
-    window.open("/games/"+data,$('#matchCallback').text( data ) ,'width=800,height=600,scrollbars=yes')
+    window.open("/games/"+data,$('#matchCallback').text( data ) ,'width=800,height=600,toolbar=yes,scrollbars=yes')
 }
 
 function onhover(data, hover) {

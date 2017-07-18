@@ -55,7 +55,7 @@ def tot_stats(statstype):
                     if item[0] == '':
                         continue
                     if item[1] == tot_items[index][1]:
-                        for i in range(2,len(tot_items[index])):
+                        for i in range(3,len(tot_items[index])):
                             try:
                                 tot_items[index][i] = int(tot_items[index][i])
                                 tot_items[index][i] += int(item[i])

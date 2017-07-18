@@ -40,6 +40,88 @@ def show_game_summary(matchseries):
             return render_template('gamesummary.html', info=info, body = body, table=table, goalietable=goalietable)
     return render_template('child.html')
 
+@app.route('/profiles/<name>')
+def show_profiles(name):
+    Ahlm = {'name': 'Magnus Ahlm',
+            'solo': { 'BOS': {'name':'BOS', 'games': ['R1-G6'], 'results': ['-OTT 2-3(L)']},
+                      'CBJ': {'name':'CBJ', 'games': ['R1-G8'], 'results': ['-PIT 1-3(L)']},
+                      'MIN': {'name':'MIN', 'games': ['R1-G2'], 'results': ['-STL 1-3(L)']},
+                      'MTL': {'name':'MTL', 'games': ['DF-G3'], 'results': ['-OTT 2-3(L)']} },
+            'dble': { 'MTL': {'name':'MTL', 'games': ['R1-G5'], 'results': ['-NYR 3-0(W)'], 'other_member': 'Niklas_Wiberg'},
+                      'CGY': {'name':'CGY', 'games': ['R1-G3'], 'results': ['-ANA 0-3(L)'], 'other_member': 'Filip_Backman'} },
+            'awards': {'2017': {'prizes': [''], 'as':['']}}}
+    
+    Backman = {'name': 'Filip Backman',
+               'solo': { 'SJS': {'name':'SJS', 'games': ['R1-G4'], 'results': ['-EDM 2-3(L)']},
+                         'STL': {'name':'STL', 'games': ['R1-G2','DF-G1','CF-G1'], 'results': ['-MIN 3-1(W)','-CHI 3-1(W)','-ANA 3-1(W)']},
+                         'WSH': {'name':'WSH', 'games': ['R1-G7','DF-G4','CF-G2'], 'results': ['-TOR 3-1(W)','-PIT 3-1(W)','-OTT 3-0(W)']} },
+               'dble': { 'CGY': {'name':'CGY', 'games': ['R1-G3'], 'results': ['-ANA 0-3(L)'], 'other_member': 'Magnus_Ahlm'},
+                         'NYR': {'name':'NYR', 'games': ['R1-G5'], 'results': ['-MTL 0-3(L)'], 'other_member': 'Filip_Edstrom'} },
+               'awards': {'2017': {'prizes': ['Bird Roads Cup','Conn Smirk Trophy','Steve Icerman Trophy','Dominik Hasek Award'], 'as':['Filip Backman','Vladimir Tarasenko', 'Karl Alzner', 'Braden Holtby']}}}
+    
+    Edstrom = {'name': 'Filip Edstrom',
+               'solo': { 'CHI': {'name':'CHI', 'games': ['R1-G1','DF-G1'], 'results': ['-NAS 3-1(W)','-STL 1-3(L)']},
+                         'EDM': {'name':'EDM', 'games': ['R1-G4','DF-G2'], 'results': ['-SJS 3-2(W)','-ANA 1-3(L)']},
+                         'PIT': {'name':'PIT', 'games': ['R1-G8','DF-G4'], 'results': ['-CBJ 3-1(W)','-WSH 1-3(L)']} },
+               'dble': { 'ANA': {'name':'ANA', 'games': ['R1-G3','CF-G1'], 'results': ['-CGY 3-0(W)','-STL 1-3(L)'], 'other_member': 'Niklas_Wiberg'},
+                         'NYR': {'name':'NYR', 'games': ['R1-G5'], 'results': ['-MTL 0-3(L)'], 'other_member': 'Filip_Backman'} },
+               'awards': {'2017': {'prizes': [''], 'as':['']}}}
+    
+    Wiberg = {'name': 'Niklas Wiberg',
+              'solo': { 'NAS': {'name':'NAS', 'games': ['R1-G1'], 'results': ['-CHI 1-3(L)']},
+                        'OTT': {'name':'OTT', 'games': ['R1-G6','DF-G3','CF-G2'], 'results': ['-BOS 3-2(W)','-MTL 3-2(W)','-WSH 0-3(L)']},
+                        'TOR': {'name':'TOR', 'games': ['R1-G7'], 'results': ['-WSH 1-3(L)']},
+                        'ANA': {'name':'ANA', 'games': ['DF-G2'], 'results': ['-EDM 3-1(W)']} },
+              'dble': { 'ANA': {'name':'ANA', 'games': ['R1-G3','CF-G1'], 'results': ['-CGY 3-0(W)','-STL 1-3(L)'], 'other_member': 'Filip_Edstrom'},
+                        'MTL': {'name':'MTL', 'games': ['R1-G5'], 'results': ['-NYR 3-0(W)'], 'other_member': 'Magnus_Ahlm'} },
+              'awards': {'2017': {'prizes': [''], 'as':['']}}}
+
+    players = [Ahlm, Backman, Edstrom, Wiberg]
+    name = name.replace('_',' ')
+    name.decode('utf-8')
+    for player in players:
+        if player['name'] == name:
+            solo_body = '<div class="container">'
+            solo_body +='<h1>'+player['name']+'</h1><div class="row"><div class="col-xs-6"><h3>Solo Teams</h3></div><div class="col-xs-6"><h3>Solo Matches</h3></div></div>'
+            for team in player['solo'].keys():
+                solo_team_info = '<div class="row">'
+                solo_team_info += '<div class="col-xs-6"><p class="teams"><img src="/static/teams/'+player['solo'][team]['name']+'/'+player['solo'][team]['name']+'logo.png" height="25pt" ><a href="/teams/'+player['solo'][team]['name']+'/">'+player['solo'][team]['name']+'</p></a></div>'
+                solo_team_info += '<div class="col-xs-6"><p class="teams">'
+                for gameno in range(len(player['solo'][team]['games'])):
+                    solo_team_info += '<a href="/games/'+player['solo'][team]['games'][gameno]+'/">'+player['solo'][team]['name']+player['solo'][team]['results'][gameno]+'</a>    '
+                solo_team_info += '</p></div></div>'
+                solo_body += solo_team_info
+            solo_body += '</div>'
+
+            dbl_body = '<div class="container">'
+            dbl_body +='<div class="row"><div class="col-xs-6"><h3>Double Teams</h3></div><div class="col-xs-6"><h3>Double Matches</h3></div></div>'
+            for team in player['dble'].keys():
+                dbl_team_info = '<div class="row">'
+                dbl_team_info += '<div class="col-xs-6"><p class="teams"><img src="/static/teams/'+player['dble'][team]['name']+'/'+player['dble'][team]['name']+'logo.png" height="25pt" ><a href="/teams/'+player['dble'][team]['name']+'/">'+player['dble'][team]['name']+'</a> together with <a href="/profiles/'+player['dble'][team]['other_member']+'">'+player['dble'][team]['other_member'].replace('_',' ')+'</a></p></div>'
+                dbl_team_info += '<div class="col-xs-6"><p class="teams">'
+                for gameno in range(len(player['dble'][team]['games'])):
+                    dbl_team_info += '<a href="/games/'+player['dble'][team]['games'][gameno]+'/">'+player['dble'][team]['name']+player['dble'][team]['results'][gameno]+'</a>   '
+                dbl_team_info += '</p></div></div>'
+                dbl_body += dbl_team_info
+            dbl_body += '</div>'
+            
+            #print solo_body
+            awards_text = '<div class="container">'
+            awards_text += '<div class="row"><h3>Awards</h3><div class="col-xs-4"><h4>Year:</h4></div><div class="col-xs-4"><h4>Award:</h4></div><div class="col-xs-4"><h4>As:</h4></div></div>'
+            for year in player['awards'].keys():
+                awards_text += '<div class="row"><div class="col-xs-4"><p>'+year+':</p></div>'
+                prize_text = '<div class="col-xs-4">'
+                winner_text = '<div class="col-xs-4">'
+                for no in range(len(player['awards'][year]['prizes'])):
+                    prize_text += '<p>'+player['awards'][year]['prizes'][no]+'</p>'
+                    winner_text += '<p>'+player['awards'][year]['as'][no]+'</p>'
+                awards_text += prize_text + '</div>' + winner_text + '</div></div></div>'
+
+                     
+            return render_template('profiles.html',player=player, solobody=solo_body, dblbody = dbl_body, awardsbody=awards_text)
+
+
+
 @app.route('/games/<matchseries>/<game>')
 def show_game_details(matchseries, game):
     try:
@@ -56,11 +138,19 @@ def show_game_details(matchseries, game):
             matchseries = matchseries.encode('utf-8')
             matchlist = matchseries.split('-')
             events2 = ''
-            try:
-                open('static/games/'+matchlist[0]+'/'+matchlist[1]+'/'+game+'/events2.jpg')
-                events2 = '<img src="/static/games/'+matchlist[0]+'/'+matchlist[1]+'/'+game+'/events2.jpg" width="700pt" class="centering"></img>'
-            except IOError:
-                True
+            if len(matchlist)>1:
+                try:
+                    open('static/games/'+matchlist[0]+'/'+matchlist[1]+'/'+game+'/events2.jpg')
+                    events2 = '<img src="/static/games/'+matchlist[0]+'/'+matchlist[1]+'/'+game+'/events2.jpg" width="700pt" class="centering"></img>'
+                except IOError:
+                    True
+            else:
+                try:
+                    open('static/games/'+matchlist[0]+'/'+game+'/events2.jpg')
+                    events2 = '<img src="/static/games/'+matchlist[0]+'/'+game+'/events2.jpg" width="700pt" class="centering"></img>'
+                except IOError:
+                    True
+
             return render_template('game.html', info={'team': info[1:3], 'score': info[gamenr+2], 'matchid': matchlist, 'game': game}, events2 = events2)
     return render_template('child.html')
 
@@ -139,8 +229,13 @@ def show_playofftree():
             
             return render_template('playofftree.html', final={'teaminfo': info[1:3], 'gameinfo': gameinfo, 'body': body, 'series': [home, away]})
 
-
-
+@app.route('/humanstats')
+def show_human_stats():
+    solotable = playerstats_to_html(stats_reader('static/stats/individual_stats/indstats.csv'))
+    dbltable = playerstats_to_html(stats_reader('static/stats/individual_stats/teamstats.csv'),'2')
+    tottable = playerstats_to_html(stats_reader('static/stats/individual_stats/totstats.csv'),'3')
+    return render_template('human_stats.html', stats={'solo': solotable, 'team':dbltable, 'tot':tottable})
+    
 def stats_reader(pathtostatsfile):
     infofile = open(pathtostatsfile).read()
     infoline = infofile.split('\n')
@@ -165,6 +260,8 @@ def playerstats_to_html(stats, idchanger=''):
     #looping over all players adding a row
     for line in stats:
         if line == stats[0]:
+            continue
+        if line == ['\x00']:
             continue
         html_string+='<tr>'
         for item in line:

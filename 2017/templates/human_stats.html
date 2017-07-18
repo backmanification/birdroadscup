@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}People Stats{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+  .important { color: #336699; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Total Stats</h1>
+  {{stats.tot | safe}}
+</div>
+<div class="container">
+  <h1>Solo Stats</h1>
+  {{stats.solo | safe}}
+</div>
+<div class="container">
+  <h1>Team Stats</h1>
+  {{stats.team | safe}}
+</div>
+{% endblock %}
