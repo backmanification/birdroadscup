@@ -1,19 +1,19 @@
 var bracketEast = {
   "teams": [              // Matchups
-      ['<img src="static/thumbnails/MTLthumbnail.png" height="100%"></img> MTL',
-       '<img src="static/thumbnails/NYRthumbnail.png" height="100%"></img> NYR'],  
-      ['<img src="static/thumbnails/OTTthumbnail.png" height="100%"></img> OTT',
-       '<img src="static/thumbnails/BOSthumbnail.png" height="100%"></img> BOS'],   
+      ['<img src="static/thumbnails/TBLthumbnail.png" height="100%"></img> TBL',
+       '<img src="static/thumbnails/NJDthumbnail.png" height="100%"></img> NJD'],  
+      ['<img src="static/thumbnails/BOSthumbnail.png" height="100%"></img> BOS',
+       '<img src="static/thumbnails/TORthumbnail.png" height="100%"></img> TOR'],   
       ['<img src="static/thumbnails/WSHthumbnail.png" height="100%"></img> WSH',
-       '<img src="static/thumbnails/TORthumbnail.png" height="100%"></img> TOR'],  
+       '<img src="static/thumbnails/CBJthumbnail.png" height="100%"></img> CBJ'],  
       ['<img src="static/thumbnails/PITthumbnail.png" height="100%"></img> PIT',
-       '<img src="static/thumbnails/CBJthumbnail.png" height="100%"></img> CBJ']
+       '<img src="static/thumbnails/PHIthumbnail.png" height="100%"></img> PHI']
   ],
   results: [
       [
-          [[3, 0,'R1-G5'], [3, 2, 'R1-G6'], [3, 1, 'R1-G7'], [3, 1, 'R1-G8']],
-          [[2, 3,'DF-G3'], [3, 1, 'DF-G4']],
-          [[0, 3,'CF-G2']]
+          [[0, 0,'R1-G5'], [0, 0, 'R1-G6'], [0, 0, 'R1-G7'], [0, 0, 'R1-G8']],
+          [[0, 0,'DF-G3'], [0, 0, 'DF-G4']],
+          [[0, 0,'CF-G2']]
       ]
   ]
 }
@@ -21,20 +21,20 @@ var bracketEast = {
 
 var bracketWest = {
   "teams": [              // Matchups
-      ['<img src="static/thumbnails/CHIthumbnail.png" height="100%"></img> CHI',
-       '<img src="static/thumbnails/NASthumbnail.png" height="100%"></img> NAS'],
-      ['<img src="static/thumbnails/MINthumbnail.png" height="100%"></img> MIN',
-       '<img src="static/thumbnails/STLthumbnail.png" height="100%"></img> STL'],
+      ['<img src="static/thumbnails/NASthumbnail.png" height="100%"></img> NAS',
+       '<img src="static/thumbnails/COLthumbnail.png" height="100%"></img> COL'],
+      ['<img src="static/thumbnails/WPGthumbnail.png" height="100%"></img> WPG',
+       '<img src="static/thumbnails/MINthumbnail.png" height="100%"></img> MIN'],
+      ['<img src="static/thumbnails/VGKthumbnail.png" height="100%"></img> VGK',
+       '<img src="static/thumbnails/LAKthumbnail.png" height="100%"></img> LAK'],
       ['<img src="static/thumbnails/ANAthumbnail.png" height="100%"></img> ANA',
-       '<img src="static/thumbnails/CGYthumbnail.png" height="100%"></img> CGY'],
-      ['<img src="static/thumbnails/EDMthumbnail.png" height="100%"></img> EDM',
        '<img src="static/thumbnails/SJSthumbnail.png" height="100%"></img> SJS']
   ],
   results: [
       [
-          [[3, 1,'R1-G1'], [1, 3, 'R1-G2'], [3, 0, 'R1-G3'], [3, 2, 'R1-G4']],
-          [[1, 3,'DF-G1'], [3, 1, 'DF-G2']],
-          [[3, 1,'CF-G1']]
+          [[0, 0,'R1-G1'], [0, 0, 'R1-G2'], [0, 0, 'R1-G3'], [0, 0, 'R1-G4']],
+          [[0, 0,'DF-G1'], [0, 0, 'DF-G2']],
+          [[0, 0,'CF-G1']]
       ]
   ]
 }
