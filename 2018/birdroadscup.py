@@ -214,8 +214,8 @@ def show_playofftree():
         if info[0] == 'BRC':
             count = 0
             body = ''
-            home=4
-            away=3
+            home=""
+            away=""
             gameinfo = ''
             for i in range(3,len(info)):
                 if info[i] == '':
