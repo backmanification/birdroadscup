@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Draft{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+  .important { color: #336699; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Solo Draft</h1>
+  {{info.solotext|safe}}
+  <h1>2v2 Draft</h1>
+  {{info.dbltext|safe}}
+</div>
+{% endblock %}

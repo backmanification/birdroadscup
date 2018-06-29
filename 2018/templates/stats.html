@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}Stats{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+  .important { color: #336699; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+  <h1>Player Stats</h1>
+  {{playertable | safe}}
+</div>
+<div class="container">
+  <h1>Goalie Stats</h1>
+  {{goalietable | safe}}
+</div>
+{% endblock %}

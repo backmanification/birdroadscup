@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title %}Team: {{team[0]}}{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+  .important { color: #336699; }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+      <img src="/static/teams/{{team[0]}}/{{team[0]}}logo.png" width="100%" class="centering"></img>
+    </div>
+    <div class="col-xs-4">
+      <p class="centeredtext">
+	<h1>{{team[1]}}</h1>
+	<h3>{{team[3]}}</h3>
+      </p>
+    </div>
+    <div class="col-xs-4"></div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-4">
+      <p class="score">Forwards</p>
+    </div>
+    <div class="col-xs-4">
+      <p class="score">Defenders</p>
+    </div>
+    <div class="col-xs-4">
+      <p class="score">Goalies</p>
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-xs-4">
+      <img src="/static/teams/{{team[0]}}/{{team[0]}}for.jpg" width="90%" class="centering"></img>
+    </div>
+    <div class="col-xs-4">
+      <img src="/static/teams/{{team[0]}}/{{team[0]}}def.jpg" width="90%" class="centering"></img>
+    </div>
+    <div class="col-xs-4">
+      <img src="/static/teams/{{team[0]}}/{{team[0]}}gk.jpg" width="90%" class="centering"></img>
+    </div>
+  </div>
+</div>
+{% endblock %}
+<!-- Unika koden for teams slutet-->

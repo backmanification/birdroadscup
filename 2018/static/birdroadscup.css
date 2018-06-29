@@ -1,0 +1,37 @@
+img.centering {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p.finalscore {
+    text-align: center;
+    font-size: 60pt;
+}
+p.score {
+    text-align: center;
+    font-size: 15pt;
+}
+div.jQBracket .bubble {
+    display: none;
+}
+p.centeredtext {
+    text-align: center;
+    
+}
+
+body { padding-top: 70px; }
+
+p.footerspace { margin-top: 30px; }
+
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+div.dataTables_wrapper {
+    margin-bottom: 3em;
+}
+
+.teams {
+    font-size: 15pt;    
+}

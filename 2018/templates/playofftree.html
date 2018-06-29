@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}Playoff Tree{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+  <h1>Playoff Tree</h1>
+  <div class="row">
+    <div class="col-xs-4">
+      <div id="westBracket"></div>
+    </div>
+    <div class="col-xs-4">
+
+      <div class="row">
+	<div class="col-xs-3">
+	  <img src="static/teams/{{final.teaminfo[0]}}/{{final.teaminfo[0]}}logo.png" width="100%" class="centering"></img>
+	</div>
+	<div class="col-xs-6">
+	</div>
+	<div class="col-xs-3">
+	  <img src="static/teams/{{final.teaminfo[1]}}/{{final.teaminfo[1]}}logo.png" width="100%" class="centering"></img>
+	</div>
+      </div>
+
+      <div class="row">
+	<div class="col-xs-3">
+	  <p class="finalscore">{{final.series[0]}}</p>
+	</div>
+	<div class="col-xs-6">
+	  <img src="static/awards/BirdRoadsCup2.jpg" width="100%" class="centering"></img>
+	</div>
+	<div class="col-xs-3">
+	  <p class="finalscore">{{final.series[1]}}</p>
+	</div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div id="eastBracket"></div>
+    </div>
+  </div>
+  <a href="/games/BRC/"><p class="score">Bird Roads Cup Finals</p></a> 
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+      <!--{{final.body | safe}}-->
+    </div>
+    <div class="col-xs-4"></div>
+  </div>
+</div>
+{% endblock %}

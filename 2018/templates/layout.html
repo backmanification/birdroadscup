@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    {% block head %}
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='birdroadscup.css') }}">
+    <title>BRC - {% block title %}{% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body>
+    <!-- navbar below -->
+    <nav class="navbar navbar-toggleable-md navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Bird Roads Cup</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/playofftree">Playoff Tree</a></li>
+	    <li><a href="/draft">Draft</a></li>
+            <li><a href="/stats">Stats</a></li>
+	    <li><a href="/humanstats">People Stats</a></li>
+	    <li><a href="/awards">Awards</a></li>
+	    <li class="nav-item dropdown">
+              <a class="navbar-toggleable-md" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Teams</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown01">
+		<li><a class="dropdown-item" href="/teams/ANA">ANA</a></li>
+		<li><a class="dropdown-item" href="/teams/BOS">BOS</a></li>
+		<li><a class="dropdown-item" href="/teams/CBJ">CBJ</a></li>
+		<li><a class="dropdown-item" href="/teams/CGY">CGY</a></li>
+		<li><a class="dropdown-item" href="/teams/CHI">CHI</a></li>
+		<li><a class="dropdown-item" href="/teams/EDM">EDM</a></li>
+		<li><a class="dropdown-item" href="/teams/MIN">MIN</a></li>
+		<li><a class="dropdown-item" href="/teams/MTL">MTL</a></li>
+		<li><a class="dropdown-item" href="/teams/NAS">NAS</a></li>
+		<li><a class="dropdown-item" href="/teams/NYR">NYR</a></li>
+		<li><a class="dropdown-item" href="/teams/OTT">OTT</a></li>
+		<li><a class="dropdown-item" href="/teams/PIT">PIT</a></li>
+		<li><a class="dropdown-item" href="/teams/SJS">SJS</a></li>
+		<li><a class="dropdown-item" href="/teams/STL">STL</a></li>
+		<li><a class="dropdown-item" href="/teams/TOR">TOR</a></li>
+		<li><a class="dropdown-item" href="/teams/WSH">WSH</a></li>
+	      </ul>
+            </li>
+	    <li class="nav-item dropdown">
+              <a class="navbar-toggleable-md" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profiles</a>
+              <ul class="dropdown-menu" aria-labelledby="dropdown01">
+		<li><a class="dropdown-item" href="/profiles/Magnus_Ahlm">Magnus Ahlm</a></li>
+		<li><a class="dropdown-item" href="/profiles/Filip_Backman">Filip Backman</a></li>
+		<li><a class="dropdown-item" href="/profiles/Filip_Edstrom">Filip Edstrom</a></li>
+		<li><a class="dropdown-item" href="/profiles/Niklas_Wiberg">Niklas Wiberg</a></li>
+              </ul>
+            </li>
+	    <li><a href="/calendar">Calendar</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <!-- navbar above -->
+    
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+      <p class="footerspace">&copy; Copyright 2017 by <a href="/teams/TBD">A Chaffinch in the Rough</a></p>.
+      {% endblock %}
+    </div>
+    <!-- hårdkod nedan -->
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.bracket.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.bracket.min.css') }}" />
+   
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='datascroller.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <!--<script src="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>-->
+    <script src="{{ url_for('static', filename='playofftree.js') }}"> </script>
+    <!--hårdkod ovan -->
+  </body>
+</html>
