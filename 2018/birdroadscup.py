@@ -67,7 +67,7 @@ def show_profiles(name):
                          'NYR': {'name':'NYR', 'games': ['R1-G5'], 'results': ['-MTL 0-3(L)'], 'other_member': 'Filip_Backman','teamname': 'Team Filip'} },
                'awards': {'2017': {'prizes': [''], 'as':['']}}}
     
-    Wiberg = {'name': 'Niklas Wiberg',
+    NWiberg = {'name': 'Niklas Wiberg',
               'solo': { 'NAS': {'name':'NAS', 'games': ['R1-G1'], 'results': ['-CHI 1-3(L)']},
                         'OTT': {'name':'OTT', 'games': ['R1-G6','DF-G3','CF-G2'], 'results': ['-BOS 3-2(W)','-MTL 3-2(W)','-WSH 0-3(L)']},
                         'TOR': {'name':'TOR', 'games': ['R1-G7'], 'results': ['-WSH 1-3(L)']},
@@ -76,7 +76,16 @@ def show_profiles(name):
                         'MTL': {'name':'MTL', 'games': ['R1-G5'], 'results': ['-NYR 3-0(W)'], 'other_member': 'Magnus_Ahlm','teamname': 'Team Rest'} },
               'awards': {'2017': {'prizes': [''], 'as':['']}}}
 
-    players = [Ahlm, Backman, Edstrom, Wiberg]
+    VWiberg = {'name': 'Viktor Wiberg',
+              'solo': { 'NAS': {'name':'NAS', 'games': ['R1-G1'], 'results': ['-CHI 1-3(L)']},
+                        'OTT': {'name':'OTT', 'games': ['R1-G6','DF-G3','CF-G2'], 'results': ['-BOS 3-2(W)','-MTL 3-2(W)','-WSH 0-3(L)']},
+                        'TOR': {'name':'TOR', 'games': ['R1-G7'], 'results': ['-WSH 1-3(L)']},
+                        'ANA': {'name':'ANA', 'games': ['DF-G2'], 'results': ['-EDM 3-1(W)']} },
+              'dble': { 'ANA': {'name':'ANA', 'games': ['R1-G3','CF-G1'], 'results': ['-CGY 3-0(W)','-STL 1-3(L)'], 'other_member': 'Filip_Edstrom','teamname': 'Team Thrush'},
+                        'MTL': {'name':'MTL', 'games': ['R1-G5'], 'results': ['-NYR 3-0(W)'], 'other_member': 'Magnus_Ahlm','teamname': 'Team Rest'} },
+              'awards': {'2017': {'prizes': [''], 'as':['']}}}
+
+    players = [Ahlm, Backman, Edstrom, NWiberg, VWiberg]
     name = name.replace('_',' ')
     name.decode('utf-8')
     for player in players:
