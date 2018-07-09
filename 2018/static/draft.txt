@@ -2,7 +2,7 @@
 2,MA,BOS,Magnus Ahlm,Boston Bruins
 3,NW,TOR,Niklas Wiberg,Toronto Maple Leafs
 4,VW,WPG,Viktor Wiberg,Winnipeg Jets
-5,FE,WAS,Filip Edstrom,Washington Capitals
+5,FE,WSH,Filip Edstrom,Washington Capitals
 6,FE,NAS,Filip Edstrom,Nashville Predators
 7,VW,PIT,Viktor Wiberg,Pittsburgh Penguins
 8,NW,VGK,Niklas Wiberg,Vegas Golden Knights
