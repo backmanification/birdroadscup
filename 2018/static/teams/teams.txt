@@ -1,17 +1,17 @@
-NAS,Nashville Predators,NW,Niklas Wiberg
-COL,Colorado Avalanche,VW,Viktor Wiberg
+NAS,Nashville Predators,FE,Filip Edstrom
+COL,Colorado Avalanche,NW,Niklas Wiberg
 WPG,Winnipeg Jets,VW,Viktor Wiberg
 MIN,Minnesota Wild,MA,Magnus Ahlm
-VGK,Vegas Golden Knights,VW,Viktor Wiberg
-LAK,Los Angeles Kings,VW,Viktor Wiberg
-ANA,Anaheim Ducks,NF,Team Thrush
-SJS,San Jose Sharks,FB,Filip Backman
-TBL,Tampa Bay Lightning,VW,Viktor Wiberg
-NJD,New Jersey Devils,VW,Viktor Wiberg
+VGK,Vegas Golden Knights,NW,Niklas Wiberg
+LAK,Los Angeles Kings,FB,Filip Backman
+ANA,Anaheim Ducks,VW,Viktor Wiberg
+SJS,San Jose Sharks,FE,Filip Edstrom
+TBL,Tampa Bay Lightning,FB,Filip Backman
+NJD,New Jersey Devils,FE,Filip Edstrom
 BOS,Boston Bruins,MA,Magnus Ahlm
 TOR,Toronto Maple Leafs,NW,Niklas Wiberg
-WSH,Washington Capitals,FB,Filip Backman
+WSH,Washington Capitals,FE,Filip Edstrom
 CBJ,Columbus Blue Jackets,MA,Magnus Ahlm
-PIT,Pittsburgh Penguins,FE,Filip Edstrom
-PHI,Philadelphia Flyers,VW,Viktor Wiberg
+PIT,Pittsburgh Penguins,VW,Viktor Wiberg
+PHI,Philadelphia Flyers,FB,Filip Backman
 TBD,New York Islanders,FB,Filip Backman
