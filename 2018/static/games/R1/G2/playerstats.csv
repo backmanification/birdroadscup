@@ -1,4 +1,5 @@
 POS,PLAYER,TEAM,GP,G,A,P,+/-,PIM
+D,M.Dumba,MIN,2,1,2,3,1,0
 C,M.Granlund,MIN,2,1,1,2,2,2
 LW,Z.Parise,MIN,2,1,1,2,2,0
 RW,P.Laine,WPG,2,0,2,2,1,0
@@ -12,7 +13,7 @@ C,M.Cullen,MIN,2,0,1,1,1,0
 C,B.Little,WPG,2,0,1,1,-2,0
 LW,D.Winnik,MIN,2,0,1,1,0,0
 D,N.Prosser,MIN,2,0,1,1,0,0
-
+RW,T.Ennis,MIN,2,0,0,0,2,0
 D,T.Enstrom,WPG,2,0,0,0,1,0
 D,D.Byfuglien,WPG,2,0,0,0,0,0
 RW,B.Wheeler,WPG,2,0,0,0,-2,0
@@ -21,7 +22,7 @@ D,D.Kulikov,WPG,2,0,0,0,-2,0
 C,A.Lowry,WPG,2,0,0,0,0,0
 RW,J.Armia,WPG,2,0,0,0,-1,0
 C,M.Scheifele,WPG,2,0,0,0,-3,0
-
+LW,B.Tanev,WPG,2,0,0,0,-1,0
 D,R.Suter,MIN,2,0,0,0,2,0
 C,M.Koivu,MIN,2,0,0,0,2,0
 C,E.Staal,MIN,2,0,0,0,-1,0
