@@ -94,7 +94,7 @@ def show_profiles(name):
             solo_body +='<h1>'+player['name']+'</h1><div class="row"><div class="col-xs-6"><h3>Solo Teams</h3></div><div class="col-xs-6"><h3>Solo Matches</h3></div></div>'
             for team in player['solo'].keys():
                 solo_team_info = '<div class="row">'
-                solo_team_info += '<div class="col-xs-6"><p class="teams"><img src="/static/teams/'+player['solo'][team]['name']+'/'+player['solo'][team]['name']+'logo.png" height="25pt" ><a href="/teams/'+player['solo'][team]['name']+'/">'+player['solo'][team]['name']+'</p></a></div>'
+                solo_team_info += '<div class="col-xs-6"><p class="teams"><img src="/static/teams/'+player['solo'][team]['name']+'/'+player['solo'][team]['name']+'logo.png" height="25pt" ><a href="/teams/'+player['solo'][team]['name']+'">'+player['solo'][team]['name']+'</p></a></div>'
                 solo_team_info += '<div class="col-xs-6"><p class="teams">'
                 for gameno in range(len(player['solo'][team]['games'])):
                     solo_team_info += '<a href="/games/'+player['solo'][team]['games'][gameno]+'/">'+player['solo'][team]['name']+player['solo'][team]['results'][gameno]+'</a>    '
