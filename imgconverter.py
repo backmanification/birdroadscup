@@ -3,16 +3,19 @@ import pytesseract
 import os
 import pdb
 #from birdroadscup import stats_reader
+no = 1
+
+
 
 def img_convert(pathtofile, outputpath):
     text = 'POS '
     
-    img = Image.open(pathtofile).crop((120, 220, 1220, 850))
-    img = ImageOps.invert(img)#(0,0,300,580/14))
+    img = Image.open(pathtofile).crop((100, 220, 1220, 850))
+    #img = ImageOps.invert(img)#(0,0,300,580/14))
 
     img.save('temp.jpg')
 
-    text += pytesseract.image_to_string(img)
+    text += pytesseract.image_to_string(img, config="-c tessedit_char_whitelist=-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.0123456789 -psm 6")
     text = text.replace('1-]','+/')
     text = text.replace('+I-','+/-')
     text = text.replace('F1','R')
@@ -78,8 +81,8 @@ def menu():
         break
     while True:
         outputpath = raw_input('Path to save directory (starting from /static/games/): ')
-        outputpath = '2017/static/games/'+outputpath
-        for x in os.walk('2017/static/games'):
+        outputpath = '2018/static/games/'+outputpath
+        for x in os.walk('2018/static/games'):
             print x[0]
             if x[0] == outputpath:
                 return True, statstype, filepath, outputpath
@@ -96,8 +99,8 @@ while True:
     if riddle == 'y':
         success = True
         statstype = 'player'
-        filepath = 'leksaker/WSH-OTT/stats1.jpg'
-        outputpath = '2017/static/games/CF/G2'
+        filepath = 'leksaker2018/ANA-SJS/pstats%s.jpg' %no
+        outputpath = '2018/static/games/R1/G4'
         break
     success, statstype, filepath, outputpath = menu()
     if not success:

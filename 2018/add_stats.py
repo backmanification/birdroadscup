@@ -41,17 +41,17 @@ def tot_stats(statstype):
             except IOError:
                 continue
             statsrows = stats.split('\n')
-
+            pdb.set_trace()
             for row in statsrows:
                 if row == statsrows[0]:
                     continue
                 item = row.split(',')
                 for index in range(len(tot_items)):
-                    #print index
+                    print index
                     if tot_items[index][0] =='':
                         continue
-                    #print 'new',item
-                    #print 'old',tot_items[index]
+                    print 'new',item
+                    print 'old',tot_items[index]
                     if item[0] == '':
                         continue
                     if item[1] == tot_items[index][1]:
