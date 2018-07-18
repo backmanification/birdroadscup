@@ -7,4 +7,4 @@
 7,VW,PIT,Viktor Wiberg,Pittsburgh Penguins
 8,NW,VGK,Niklas Wiberg,Vegas Golden Knights
 9,MA,CBJ,Magnus Ahlm,Columbus Blue Jackets
-10,FE,SJS,Filip Edstrom,San Jose Sharks
+10,VW,ANA,Viktor Wiberg,Anaheim Ducks
