@@ -11,7 +11,7 @@ C,T.Plekanec,TOR,3,1,0,1,1,0
 D,N.Zaitsev,TOR,3,0,1,1,1,0
 D,A.Sustr,TBL,3,0,1,1,1,0
 LW,A.Killorn,TBL,3,0,1,1,1,0
-D,V,Hedman,TBL,3,0,1,1,-2,0
+D,V.Hedman,TBL,3,0,1,1,-2,0
 LW,O.Palat,TBL,3,0,1,1,-1,0
 LW,Y.Gourde,TBL,3,0,1,1,0,0
 D,R.Hainsey,TOR,3,0,1,1,1,0
@@ -21,7 +21,7 @@ RW,R.Callahan,TBL,3,0,0,0,0,0
 D,D.Girardi,TBL,3,0,0,0,0,4
 D,A.Stralman,TBL,3,0,0,0,-1,0
 C,T.Johnson,TBL,3,0,0,0,0,0
-RW,L,Komarov,TOR,3,0,0,0,0,0
+RW,L.Komarov,TOR,3,0,0,0,0,0
 LW,J.Miller,TBL,3,0,0,0,-2,4
 C,T.Bozak,TOR,3,0,0,0,0,0
 C,N.Kadri,TOR,3,0,0,0,-2,2
