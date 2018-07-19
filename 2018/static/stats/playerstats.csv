@@ -110,7 +110,7 @@ RW,J.Voracek,PHI,2,0,2,2,-1,0
 D,R.Gudas,PHI,2,0,2,2,-2,0
 D,I.Provorov,PHI,2,0,2,2,-1,0
 D,O.Maatta,PIT,5,0,2,2,1,0
-RW,P.Hornqvist,PIT,2,0,2,2,2,0
+RW,P.Hornqvist,PIT,5,1,2,3,2,0
 C,E.Malkin,PIT,5,1,1,2,0,0
 LW,A.Ovechkin,WSH,5,5,0,5,2,0
 C,E.Kuznetsov,WSH,5,2,2,4,4,0
@@ -150,6 +150,9 @@ D,B.Orpik,WSH,5,0,1,1,-4,0
 C,P.Dubois,CBJ,2,0,0,0,-1,0
 RW,N.Foligno,CBJ,2,0,0,0,0,0
 D,Z.Werenski,CBJ,2,0,0,0,-4,0
+
+RW,A.Chiasson,WSH,3,0,0,0,-3,2
+
 D,M.Dumba,MIN,2,1,2,3,1,0
 C,M.Granlund,MIN,2,1,1,2,2,2
 LW,Z.Parise,MIN,2,1,1,2,2,0
@@ -188,7 +191,7 @@ D,G.Olofsson,MIN,2,0,0,0,0,0
 C,J.Eriksson Ek,MIN,2,0,0,0,-1,2
 RW,K.Palmieri,NJD,2,1,2,3,1,0
 LW,A.Killorn,TBL,2,1,1,2,1,0
-LW,V.Gourde,TBL,2,1,1,2,2,0
+LW,Y.Gourde,TBL,2,1,1,2,2,0
 LW,J.Miller,TBL,2,1,1,2,-1,0
 D,D.Girardi,TBL,2,0,2,2,1,0
 C,A.Cirelli,TBL,2,0,2,2,2,0
