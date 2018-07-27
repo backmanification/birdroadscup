@@ -229,13 +229,14 @@ def show_playofftree():
         if info[0] == 'BRC':
             count = 0
             body = ''
-            home=""
-            away=""
+            home="1"
+            away="2"
             gameinfo = ''
             for i in range(3,len(info)):
                 if info[i] == '':
                     break
                 gameinfo = info[i].split('-')
+                """
                 try:
                     if gameinfo[0]>gameinfo[1]:
                         home +=1
@@ -244,6 +245,7 @@ def show_playofftree():
                 except IndexError:
                     home = 1
                     away = 2
+                """
                 body += '<div class="row"><div class="col-xs-2"></div><div class="col-xs-2"><p class="score">'+gameinfo[0]+'</p></div><div class="col-xs-4"><a href="/games/BRC/game'+str(i-2)+'"><p class="score">Game '+str(i-2)+'</p></a></div><div class="col-xs-2"><p class="score">'+gameinfo[1]+'</p></div><div class="col-xs-2"></div></div>'
             
             return render_template('playofftree.html', final={'teaminfo': info[1:3], 'gameinfo': gameinfo, 'body': body, 'series': [home, away]})
