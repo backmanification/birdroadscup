@@ -79,4 +79,4 @@ def tot_stats(statstype):
     tot_stats_file.write(text)
     tot_stats_file.close()
 
-tot_stats('player')
+tot_stats('goalie')
